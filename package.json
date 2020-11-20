@@ -1,0 +1,35 @@
+{
+  "name": "2shop-admin-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start2": "ts-node --compiler typescript --project ./tsconfig.json src/server.ts",
+    "watch": "tsc -w",
+    "start": "node dist/server.js",
+    "dev": "nodemon dist/server.js",
+    "test": "./node_modules/.bin/mocha --require @babel/register"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.8",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.7",
+    "nodemon": "^2.0.6",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0",
+    "validator": "^13.1.17"
+  }
+}
