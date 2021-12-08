@@ -1,8 +1,10 @@
 const config = {
-  jwtSecretSalt: "thesecretekey",
-  devMongoUrl: "mongodb://localhost:27016/dev",
-  prodMongoUrl: "mongodb://localhost:27016/db_admin",
-  testMongoUrl: "mongodb://localhost:27016/test",
+  jwtSecretSalt: process.env.SECRET_JWT,
+  devMongoUrl: process.env.MONGO_DEV
+    ? process.env.MONGO_DEV
+    : "mongodb://admin-db:27017/admin",
+  prodMongoUrl: process.env.MONGO_PROD,
+  testMongoUrl: process.env.MONGO_TEST,
 };
 
 export default config;

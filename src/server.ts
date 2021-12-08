@@ -1,7 +1,7 @@
 import app from "./app";
 import { Application } from "express";
 
-const port: number = process.env.PORT ? parseInt(process.env.PORT) : 9000;
+const port: number = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
 function startApp(app: Application) {
   app.listen(port, () => {

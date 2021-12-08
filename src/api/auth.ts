@@ -38,7 +38,7 @@ function signUp(req: Request, res: Response) {
     ...req.body,
   });
   return newUser.save((err, data) => {
-    if (err) return res.json(errorResponse(err)).status(400);
+    if (err) return res.json(errorResponse(err.toString())).status(400);
 
     const { _id, email, role } = data;
     return successResponse(data);
@@ -48,7 +48,7 @@ function signUp(req: Request, res: Response) {
 function findByEmail(req: Request, res: Response, next: NextFunction) {
   const { email, password } = req.body;
   AdminUser.findOne({ email }, "+password", { lean: true }, (err, data) => {
-    if (err || !data) return errorResponse(err);
+    if (err || !data) return errorResponse(err.toString());
     req.body = { unhashedPassword: password, ...data };
     return next();
   });

@@ -13,14 +13,14 @@ export default (db: string) => {
         return console.log("db connected");
       })
       .catch((err) => {
-        console.log("Error on db" + err);
+        console.log("Error on db " + err);
         return process.exit(1);
       });
   };
 
   connect();
 
-  //seed();
+  seed();
 
   mongoose.connection.on("disconnected", connect);
 };
